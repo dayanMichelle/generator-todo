@@ -20,8 +20,13 @@ return (
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const White = Template.bind({});
+White.args = {
     text:'Save',
     color:'black'
+};
+export const Black = Template.bind({});
+Black.args = {
+    text:'Doc Cohere',
+    color:'white'
 };
