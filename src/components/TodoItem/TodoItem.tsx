@@ -1,4 +1,4 @@
-import { todoStep } from "../../types/Todo";
+import { todoStep } from "../../types";
 import styles from "./TodoItem.module.css";
 
 type TodoItemProps = {

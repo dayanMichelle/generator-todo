@@ -1,4 +1,5 @@
 import styles from "./TodoCard.module.css";
+
 type CardTodoProps = {
   title: string;
   date: string;
@@ -6,6 +7,7 @@ type CardTodoProps = {
   totalTodo: number;
   id: string;
 };
+
 export function TodoCard({
   title,
   date,
