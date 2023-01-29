@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Navbar } from "./components/Navbar/Navbar";
 import { useTodos } from "./hooks/useTodos";
 import { ATodo } from "./pages/ATodo";
 import { MyTodos } from "./pages/MyTodos";
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <div>
-      hola Mundo
+      <Navbar />
       <Routes>
         <Route path="/">
           <Route

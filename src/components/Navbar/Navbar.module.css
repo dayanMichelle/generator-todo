@@ -1,22 +1,27 @@
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    font-weight: 300;
-    font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  font-weight: 300;
+  font-size: 15px;
 }
 .url ul {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 .url ul li {
-    list-style: none;
-    text-transform: capitalize;
-    cursor: pointer;
-    transition: 0.4s all ease;
+  list-style: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.4s all ease;
 }
 .url ul li:hover {
-    color: #495C83;
+  color: var(--secondary-color);
+}
+
+.activeClassName {
+  color: var(--secondary-color) !important;
+  font-weight: bold;
 }
