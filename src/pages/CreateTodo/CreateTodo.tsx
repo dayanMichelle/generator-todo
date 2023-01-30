@@ -20,6 +20,7 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
   const navigate = useNavigate();
 
   const handleSearchTodo = async () => {
+    setSearchTodo(undefined);
     setIsLoading(true);
     const todos = await getTodo(inputSearch);
     setIsLoading(false);
@@ -45,7 +46,7 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
             onChange={(e) => setInputSearch(e.target.value)}
           />
           <button onClick={handleSearchTodo} className={styles.btnSearch}>
-            🔍{" "}
+            🔍
           </button>
         </div>
       </div>
@@ -72,9 +73,11 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
           </>
         )}
       </div>
-      <div className={styles.buttonContainer}>
-        <Button color="dark" text="Save" onClick={handleButton} />
-      </div>
+      {searchTodo && (
+        <div className={styles.buttonContainer}>
+          <Button color="dark" text="Save" onClick={handleButton} />
+        </div>
+      )}
     </div>
   );
 };

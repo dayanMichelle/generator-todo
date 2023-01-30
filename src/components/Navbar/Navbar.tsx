@@ -1,12 +1,11 @@
-import styles from "./Navbar.module.css";
-import imgIcon from "@/assets/img/icon.png";
 import { NavLink } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 export function Navbar() {
   return (
     <div className={styles.navbar}>
       <div>
-        <img width="30px" src={imgIcon} alt="" />
+        <img width="30px" src="/icon.png" alt="" />
       </div>
       <div className={styles.url}>
         <ul>
