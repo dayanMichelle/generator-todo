@@ -8,12 +8,13 @@
   text-transform: uppercase;
 }
 .btnGeneric:hover {
-  cursor: pointer;
-  background-color: black;
+    cursor: pointer;
+    background-color: var(--hover-color);
+    color: var(--primary-color);
 }
 
 .dark {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  background-color: var(--secondary-color);
+  
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
 }

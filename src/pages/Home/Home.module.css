@@ -1,0 +1,19 @@
+.btnContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin: 0px left;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+}

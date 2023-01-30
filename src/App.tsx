@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTodos } from "./hooks/useTodos";
-import { ATodo } from "./pages/Atodo/ATodo";
-import { MyTodos } from "./pages/MyTodo/MyTodos";
+import { ATodo } from "./pages/ATodo";
 import "./App.css";
-import { CreateTodo } from "./pages/CreateTodo";
+import { Home, MyTodos } from "./pages";
 function App() {
   const {
     todos,
@@ -19,14 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/">
-          <Route
-            index
-            element={
-              <div>
-                <p>home</p>
-              </div>
-            }
-          />
+          <Route index element={<Home />} />
           <Route path="my-todos" element={<MyTodos todos={todos} />} />
           <Route
             path="my-todos/:id"
