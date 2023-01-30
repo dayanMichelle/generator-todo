@@ -32,9 +32,20 @@ export const useTodos = () => {
     setSelectedIdTodo(id);
   };
 
+  const handleDeleteTodo = (id: string) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   useEffect(() => {
     setTodos(todosJson);
   }, []);
 
-  return { todos, getTodoById, handleCheckedTodo, handleSelectedIdTodo };
+  return {
+    todos,
+    getTodoById,
+    handleCheckedTodo,
+    handleSelectedIdTodo,
+    handleDeleteTodo,
+  };
 };

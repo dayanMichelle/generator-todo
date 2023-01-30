@@ -1,12 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTodos } from "./hooks/useTodos";
-import { ATodo } from "./pages/ATodo";
+import { ATodo } from "./pages/Atodo/ATodo";
 import { MyTodos } from "./pages/MyTodo/MyTodos";
-import './App.css'
+import "./App.css";
 function App() {
-  const { todos, getTodoById, handleCheckedTodo, handleSelectedIdTodo } =
-    useTodos();
+  const {
+    todos,
+    getTodoById,
+    handleCheckedTodo,
+    handleSelectedIdTodo,
+    handleDeleteTodo,
+  } = useTodos();
 
   return (
     <div className="container">
@@ -29,6 +34,7 @@ function App() {
                 getTodoById={getTodoById}
                 handleCheckedTodo={handleCheckedTodo}
                 handleSelectedIdTodo={handleSelectedIdTodo}
+                handleDeleteTodo={handleDeleteTodo}
               />
             }
           />
