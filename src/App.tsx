@@ -4,6 +4,7 @@ import { useTodos } from "./hooks/useTodos";
 import { ATodo } from "./pages/Atodo/ATodo";
 import { MyTodos } from "./pages/MyTodo/MyTodos";
 import "./App.css";
+import { CreateTodo } from "./pages/CreateTodo";
 function App() {
   const {
     todos,
@@ -38,18 +39,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="create-todo"
-            element={
-              <div>
-                <p>Create Todo</p>
-              </div>
-            }
-          />
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
+          <Route path="create-todo" element={<CreateTodo />} />
           <Route path="*" element={<h3>Error</h3>} />
         </Route>
       </Routes>
