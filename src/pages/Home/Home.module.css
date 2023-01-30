@@ -1,6 +1,7 @@
 .btnContainer {
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .container {
@@ -8,7 +9,7 @@
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 .contact {
     display: flex;

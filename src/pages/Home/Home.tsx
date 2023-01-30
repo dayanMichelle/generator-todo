@@ -5,11 +5,21 @@ import styles from "./Home.module.css";
 export function Home() {
   return (
     <div className={styles.container}>
-      <Text weight={900} size="30px" text="AITodo, a solution for your prograstination 💜" />
+      <Text
+        weight={900}
+        size="30px"
+        text="AITodo, a solution for your procrastination 💜"
+      />
       <Text
         size="15px"
         weight={100}
-        text="AITodo nace de la necesidad de eliminar un paso extra al momento de hacer una lista de tareas para nuestro siguiente paso. "
+        text="AITodo: Create complete lists from an idea with Artificial Intelligence."
+      />
+      <Text
+        size="15px"
+        weight={100}
+        text="IATodo is born from the need to eliminate an extra step when making a task list for our next step.
+        IATodo is born from the need to eliminate an extra step when making a task list for our next step."
       />
       <div className={styles.btnContainer}>
         <a href="https://cohere.ai/" target="_blank">
