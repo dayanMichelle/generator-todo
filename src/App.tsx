@@ -1,12 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import { Navbar } from "./components/Navbar/Navbar";
+import { Home, MyTodos, ATodo, CreateTodo } from "./pages";
+import { Navbar } from "./components/Navbar";
 import { useTodos } from "./hooks/useTodos";
-import { ATodo } from "./pages/ATodo";
 import "./App.css";
-import { Home, MyTodos } from "./pages";
+
 function App() {
-  const { todos, getTodoById, handleCheckedTodo, handleSelectedIdTodo } =
-    useTodos();
+  const {
+    todos,
+    getTodoById,
+    handleCheckedTodo,
+    handleSelectedIdTodo,
+    handleDeleteTodo,
+  } = useTodos();
 
   return (
     <div className="container">
@@ -22,21 +27,11 @@ function App() {
                 getTodoById={getTodoById}
                 handleCheckedTodo={handleCheckedTodo}
                 handleSelectedIdTodo={handleSelectedIdTodo}
+                handleDeleteTodo={handleDeleteTodo}
               />
             }
           />
-          <Route
-            path="create-todo"
-            element={
-              <div>
-                <p>Create Todo</p>
-              </div>
-            }
-          />
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
+          <Route path="create-todo" element={<CreateTodo />} />
           <Route path="*" element={<h3>Error</h3>} />
         </Route>
       </Routes>

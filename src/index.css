@@ -8,6 +8,11 @@ body {
   font-family: "Unbounded", cursive;
   margin: 0;
   padding: 0;
+  background-color: var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {

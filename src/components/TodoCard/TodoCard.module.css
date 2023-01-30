@@ -1,13 +1,12 @@
 .container {
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 40px;
-  width: 150px;
-  text-align: left;
-  cursor: pointer;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  transition: 0.5s ease all;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 40px;
+    width: 180px;
+    text-align: left;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .container:hover {
