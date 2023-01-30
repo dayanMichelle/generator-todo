@@ -3,3 +3,20 @@
   justify-content: flex-end;
   padding: 10px 0;
 }
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.inputSearch {
+  width: 200px;
+  height: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}

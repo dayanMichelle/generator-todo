@@ -32,7 +32,7 @@ export function Home() {
         <a
         target='_blank'
           className={styles.contact}
-          href="https://www.linkedin.com/in/dayan-arango/"
+          href="https://www.linkedin.com/in/jhan-bayer/"
         >
           <img
             src="https://cdn-icons-png.flaticon.com/512/61/61109.png"

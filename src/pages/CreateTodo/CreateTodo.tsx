@@ -24,17 +24,18 @@ export const CreateTodo = () => {
   };
 
   return (
-    <div>
-      <div>
-        busqueda <button onClick={handleSearchTodo}>buscar</button>
+    <div className={styles.container}>
+      <div className={styles.search}>
+        <p>busqueda</p> 
+        <div><input type='text' className={styles.inputSearch} >buscar</input>
+        
+          </div>
+        
       </div>
       {searchTodo ? (
         <TodoList steps={searchTodo.steps} handleChange={() => {}} />
       ) : (
-        <div>
-          La idea es que sea un div vacío que ocupe el mismo espacio que el
-          TodoList
-        </div>
+        <div>.</div>
       )}
       <div className={styles.buttonContainer}>
         <Button color="dark" text="Save" onClick={() => {}} />
