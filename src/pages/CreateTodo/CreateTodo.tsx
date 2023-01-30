@@ -1,17 +1,24 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { TodoList } from "../../components/TodoList/TodoList";
 import { Todo } from "../../types";
 
 import styles from "./CreateTodo.module.css";
 
-export const CreateTodo = () => {
+type CreateTodoProps = {
+  handleAddTodo: (todo: Todo) => void;
+};
+
+export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
   const [searchTodo, setSearchTodo] = useState<Todo>();
+  const id = Math.random().toString(36).substr(2, 9);
+  const navigate = useNavigate();
 
   const handleSearchTodo = () => {
     setSearchTodo(undefined);
     const todo = {
-      id: "1",
+      id: id,
       title: "todo 1",
       date: "2021-10-10",
       steps: [
@@ -21,6 +28,12 @@ export const CreateTodo = () => {
       ],
     };
     setSearchTodo(todo);
+  };
+
+  const handleButton = () => {
+    if (!searchTodo) return;
+    handleAddTodo(searchTodo);
+    navigate("/my-todos");
   };
 
   return (
@@ -37,7 +50,7 @@ export const CreateTodo = () => {
         </div>
       )}
       <div className={styles.buttonContainer}>
-        <Button color="dark" text="Save" onClick={() => {}} />
+        <Button color="dark" text="Save" onClick={handleButton} />
       </div>
     </div>
   );

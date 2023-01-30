@@ -11,6 +11,7 @@ function App() {
     handleCheckedTodo,
     handleSelectedIdTodo,
     handleDeleteTodo,
+    handleAddTodo,
   } = useTodos();
 
   return (
@@ -31,7 +32,10 @@ function App() {
               />
             }
           />
-          <Route path="create-todo" element={<CreateTodo />} />
+          <Route
+            path="create-todo"
+            element={<CreateTodo handleAddTodo={handleAddTodo} />}
+          />
           <Route path="*" element={<h3>Error</h3>} />
         </Route>
       </Routes>

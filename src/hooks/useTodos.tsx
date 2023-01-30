@@ -37,6 +37,11 @@ export const useTodos = () => {
     setTodos(newTodos);
   };
 
+  const handleAddTodo = (todo: Todo) => {
+    const newTodos = [...todos, todo];
+    setTodos(newTodos);
+  };
+
   useEffect(() => {
     setTodos(todosJson);
   }, []);
@@ -47,5 +52,6 @@ export const useTodos = () => {
     handleCheckedTodo,
     handleSelectedIdTodo,
     handleDeleteTodo,
+    handleAddTodo,
   };
 };
