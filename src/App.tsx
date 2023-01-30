@@ -2,15 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTodos } from "./hooks/useTodos";
 import { ATodo } from "./pages/ATodo";
-import { MyTodos } from "./pages/MyTodos";
-
+import { MyTodos } from "./pages/MyTodo/MyTodos";
+import './App.css'
 function App() {
   const { todos, getTodoById, handleCheckedTodo, handleSelectedIdTodo } =
     useTodos();
-  console.log({ todos });
 
   return (
-    <div>
+    <div className="container">
       <Navbar />
       <Routes>
         <Route path="/">
