@@ -6,6 +6,7 @@
     font-weight: 100;
     font-size: 13px;
     padding: 0px 10px;
+    transition: 0.5s all ease;
 }
 .container input[type="checkbox"] {
     appearance: none;
@@ -17,8 +18,13 @@
     border: 1px solid var(--secondary-color);
 }
 
-
+.container:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+    background-color: var(--hover-color);
+}
 .checked {
     background-color: var(--secondary-color);
     color: var(--primary-color);
+    text-decoration: line-through var(--primary-color)
 }

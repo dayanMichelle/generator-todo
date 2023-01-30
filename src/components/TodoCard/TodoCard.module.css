@@ -1,41 +1,42 @@
 .container {
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 40px;
-    width: 150px;
-    text-align: left;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transition: 0.5s ease all;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 40px;
+  width: 150px;
+  text-align: left;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: 0.5s ease all;
 }
-.container:hover {
-    background-color: #495c837f;
 
+.container:hover {
+  background-color: var(--hover-color);
+  color: var(--primary-color);
 }
+
 .title {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .date {
-    font-size: 10px;
-    margin: 0 auto;
+  font-size: 10px;
+  margin: 0 auto;
 }
 
 .containerInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 10px;
 }
 
 .counter {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-
 .completed {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
