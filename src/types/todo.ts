@@ -4,7 +4,7 @@ export type todoStep = {
   checked: boolean;
 };
 
-export type todo = {
+export type Todo = {
   id: string;
   title: string;
   date: string;

@@ -1,10 +1,12 @@
-import { todo } from "../../types";
+import { Todo } from "../../types";
 import { TodoCard } from "../TodoCard";
-import styles from './TableTodo.module.css'
+import styles from "./TableTodo.module.css";
+
 type TableTodoProps = {
-    todos: todo[]
-}
-export function TableTodo({ todos }:TableTodoProps) {
+  todos: Todo[];
+};
+
+export function TableTodo({ todos }: TableTodoProps) {
   return (
     <div className={styles.container}>
       {todos?.map(({ date, id, steps, title }) => {

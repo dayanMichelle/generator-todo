@@ -1,6 +1,6 @@
-import { todoStep } from "../../types/Todo";
+import { todoStep } from "../../types";
 import { TodoItem } from "../TodoItem/TodoItem";
-import styles from './TodoList.module.css'
+import styles from "./TodoList.module.css";
 type TodoListProps = {
   steps: todoStep[];
   handleChange: (id: string) => void;
