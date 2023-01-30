@@ -1,8 +1,5 @@
-import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { Navbar } from "./Navbar";
-import { Wrapper } from "../wrapper/Wrapper";
+import { Navbar, Wrapper } from "@/components";
 
 export default {
   title: "Components/Navbar",

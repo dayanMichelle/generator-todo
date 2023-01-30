@@ -1,5 +1,5 @@
-import { TodoItem } from "../TodoItem";
-import type { TodoStep } from "../../types";
+import { TodoItem } from "@/components";
+import type { TodoStep } from "@/types";
 import styles from "./TodoList.module.css";
 
 type TodoListProps = {

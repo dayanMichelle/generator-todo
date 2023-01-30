@@ -1,8 +1,8 @@
-import { todoStep } from "../../types";
+import { TodoStep } from "@/types";
 import styles from "./TodoItem.module.css";
 
 type TodoItemProps = {
-  todoStep: todoStep;
+  todoStep: TodoStep;
   position: number;
   handleChange: (id: string) => void;
   deleteStepAtTodo: (id: string) => void;

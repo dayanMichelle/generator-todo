@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "@/components";
 import styles from "./Modal.module.css";
 
 type ModalProps = {

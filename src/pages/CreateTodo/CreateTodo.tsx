@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Button, Text, TodoList, Loading } from "../../components";
-import type { Todo } from "../../types";
-import { getTodo } from "../../services";
+import { Button, Text, TodoList, Loading } from "@/components";
+import type { Todo } from "@/types";
+import { getTodo } from "@/services";
 
-import todoDefault from "../../data/todoDefault.json";
+import todoDefault from "@/data/todoDefault.json";
 import styles from "./CreateTodo.module.css";
 
 type CreateTodoProps = {

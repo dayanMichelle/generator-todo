@@ -1,8 +1,5 @@
-import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { TableTodo } from "./TableTodo";
-import { Wrapper } from "../wrapper/Wrapper";
+import { TableTodo, Wrapper } from "@/components";
 
 export default {
   title: "Components/TableTodo",

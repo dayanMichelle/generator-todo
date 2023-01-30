@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, Modal, TodoList } from "../../components";
-import type { Todo } from "../../types";
+import { Button, Modal, TodoList } from "@/components";
+import type { Todo } from "@/types";
 
 import styles from "./ATodo.module.css";
 

@@ -1,8 +1,5 @@
-import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { Text } from "./Text";
-import { Wrapper } from "../wrapper/Wrapper";
+import { Text, Wrapper } from "@/components";
 
 export default {
   title: "Components/Text",

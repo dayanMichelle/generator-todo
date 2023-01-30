@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { createStep } from "../helpers";
-import type { Todo, TodoStep } from "../types";
+import { createStep } from "@/helpers";
+import type { Todo, TodoStep } from "@/types";
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<Todo[]>(

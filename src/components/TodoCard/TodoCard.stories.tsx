@@ -1,8 +1,5 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { TodoCard } from "./TodoCard";
-import { Wrapper } from "../wrapper/Wrapper";
+import { TodoCard, Wrapper } from "@/components";
 
 export default {
   title: "Components/TodoCard",

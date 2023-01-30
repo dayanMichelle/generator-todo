@@ -1,7 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { Button } from "./Button";
-import { Wrapper } from "../wrapper/Wrapper";
+import { Button, Wrapper } from "@/components";
 
 export default {
   title: "Components/Button",

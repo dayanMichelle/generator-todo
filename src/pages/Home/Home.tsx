@@ -1,4 +1,4 @@
-import { Button, Text } from "../../components";
+import { Button, Text } from "@/components";
 
 import styles from "./Home.module.css";
 

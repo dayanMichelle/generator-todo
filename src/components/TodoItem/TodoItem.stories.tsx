@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { TodoItem } from "./TodoItem";
-import { Wrapper } from "../wrapper/Wrapper";
+import { TodoItem, Wrapper } from "@/components";
 
 export default {
   title: "Components/TodoItem",

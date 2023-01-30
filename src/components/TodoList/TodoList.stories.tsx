@@ -1,8 +1,5 @@
-import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import { TodoList } from "./TodoList";
-import { Wrapper } from "../wrapper/Wrapper";
+import { Wrapper, TodoList } from "@/components";
 
 export default {
   title: "Components/TodoList",
