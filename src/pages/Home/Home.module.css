@@ -2,9 +2,7 @@
     display: flex;
     justify-content: space-between;
 }
-p{ 
-    margin: 0;
-}
+
 .container {
     margin: 0px left;
     max-width: 500px;
