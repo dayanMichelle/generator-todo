@@ -19,6 +19,7 @@ export function Home() {
       </div>
       <div className={styles.contact}>
         <a
+        target='_blank'
           className={styles.contact}
           href="https://www.linkedin.com/in/dayan-arango/"
         >
@@ -29,6 +30,7 @@ export function Home() {
           Dayan Arango
         </a>
         <a
+        target='_blank'
           className={styles.contact}
           href="https://www.linkedin.com/in/dayan-arango/"
         >
