@@ -3,3 +3,39 @@
   justify-content: flex-end;
   padding: 10px 0;
 }
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputSearch {
+  width: 200px;
+  height: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: var(--primary-color);
+}
+.btnSearch {
+  border: none;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  position: relative;
+  left: -30px;
+}
+.btnSearch:hover {
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.containerTodo {
+  height: 400px;
+}
+.containerTask {
+  margin: 40px 0px;
+}
