@@ -1,13 +1,15 @@
 type ButtonProps = {
-  color: string;
+  color?: "dark" | "";
   text: string;
-  onClick: () => void
+  onClick: () => void;
 };
 import styles from "./Button.module.css";
-export function Button({ color, text, onClick }: ButtonProps) {
-  const colorBF = color == "black" ? "dark" : "";
+export function Button({ color = "", text, onClick }: ButtonProps) {
   return (
-    <button onClick={() => onClick} className={`${styles.btnGeneric} ${styles[colorBF]}`}>
+    <button
+      onClick={() => onClick}
+      className={`${styles.btnGeneric} ${styles[color]}`}
+    >
       {text}
     </button>
   );

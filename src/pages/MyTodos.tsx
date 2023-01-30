@@ -1,5 +1,4 @@
 import { TableTodo } from "../components/TableTodo/TableTodo";
-import { TodoCard } from "../components/TodoCard";
 import { Todo } from "../types";
 
 type MyTodosProps = {

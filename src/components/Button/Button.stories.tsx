@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Button } from "./Button";
@@ -13,7 +12,7 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => {
-return (
+  return (
     <Wrapper>
       <Button {...args} />
     </Wrapper>
@@ -22,11 +21,11 @@ return (
 
 export const White = Template.bind({});
 White.args = {
-    text:'Save',
-    color:'black'
+  text: "Save",
 };
+
 export const Black = Template.bind({});
 Black.args = {
-    text:'Doc Cohere',
-    color:'white'
+  text: "Doc Cohere",
+  color: "dark",
 };
