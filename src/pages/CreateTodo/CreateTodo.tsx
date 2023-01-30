@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { FiSearch } from 'react-icons/fi';
 import { Button, Text, TodoList, Loading } from "@/components";
 import type { Todo } from "@/types";
 import { getTodo } from "@/services";
@@ -46,7 +46,7 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
             onChange={(e) => setInputSearch(e.target.value)}
           />
           <button onClick={handleSearchTodo} className={styles.btnSearch}>
-            🔍
+          <FiSearch />
           </button>
         </div>
       </div>

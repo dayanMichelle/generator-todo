@@ -1,12 +1,20 @@
 .container {
     border: 1px solid black;
     display: flex;
+    justify-content: space-between;
     gap: 10px;
     width: 100%;
     font-weight: 100;
     font-size: 13px;
     padding: 0px 10px;
     transition: 0.5s all ease;
+}
+.btnDelete {
+    background-color: transparent;
+    border: none;
+}
+.container:hover .trash {
+    color: var(--primary-color);
 }
 .container input[type="checkbox"] {
     appearance: none;
@@ -28,3 +36,13 @@
     color: var(--primary-color);
     text-decoration: line-through var(--primary-color)
 }
+.checked .trash {
+    color: var(--primary-color);
+}
+
+
+.containerTask {
+    display: flex;
+    gap: 20px;
+}
+

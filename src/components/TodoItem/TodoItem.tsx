@@ -1,5 +1,6 @@
 import { TodoStep } from "@/types";
 import styles from "./TodoItem.module.css";
+import { BsTrash } from "react-icons/bs";
 
 type TodoItemProps = {
   todoStep: TodoStep;
@@ -17,12 +18,14 @@ export function TodoItem({
   const { id, text, checked } = todoStep;
   return (
     <div className={`${styles.container} ${checked && styles.checked}`}>
-      <div onClick={() => handleChange(id)}>
+      <div className={styles.containerTask} onClick={() => handleChange(id)}>
         <input type="checkbox" />
         {/* Format "1. Choose a ..." */}
         <p>{`${position + 1}. ${text}`}</p>
       </div>
-      <button onClick={() => deleteStepAtTodo(id)}>🗑️</button>
+      <button className={styles.btnDelete} onClick={() => deleteStepAtTodo(id)}>
+        <BsTrash className={styles.trash} size="20px" />
+      </button>
     </div>
   );
 }

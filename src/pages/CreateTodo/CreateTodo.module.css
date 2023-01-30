@@ -18,6 +18,11 @@
   border-bottom: 1px solid var(--secondary-color);
   background-color: var(--primary-color);
 }
+.inputSearch:focus {
+  border: 1px solid var(--primary-color);
+      outline: none;
+      border-bottom: 1px solid var(--hover-color);
+}
 .btnSearch {
   border: none;
   transition: 0.3s all ease;
