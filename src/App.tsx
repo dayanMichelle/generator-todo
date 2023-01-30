@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { useTodos } from "./hooks/useTodos";
 import { ATodo } from "./pages/ATodo";
-import { MyTodos } from "./pages/MyTodo/MyTodos";
-import './App.css'
+import "./App.css";
+import { Home, MyTodos } from "./pages";
 function App() {
   const { todos, getTodoById, handleCheckedTodo, handleSelectedIdTodo } =
     useTodos();
@@ -13,14 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/">
-          <Route
-            index
-            element={
-              <div>
-                <p>home</p>
-              </div>
-            }
-          />
+          <Route index element={<Home />} />
           <Route path="my-todos" element={<MyTodos todos={todos} />} />
           <Route
             path="my-todos/:id"

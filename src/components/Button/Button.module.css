@@ -8,11 +8,12 @@
 }
 .btnGeneric:hover {
     cursor: pointer;
-    background-color: #495c837f;
+    background-color: var(--hover-color);
+    color: var(--primary-color);
 }
 
 .dark {
-    border: 1px solid var(--primary-color);
+  
     color: var(--primary-color);
     background-color: var(--secondary-color);
 }
