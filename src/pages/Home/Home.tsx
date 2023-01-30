@@ -4,8 +4,9 @@ import styles from "./Home.module.css";
 export function Home() {
   return (
     <div className={styles.container}>
-      <Text weight={900} size='30px' text="NAME OF THE APP" />
+      <Text weight={900} size="30px" text="NAME OF THE APP" />
       <Text
+        size="20px"
         weight={100}
         text="Estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen."
       />
@@ -14,12 +15,12 @@ export function Home() {
           <Button onClick={() => {}} text="Doc Cohere" />
         </a>
         <a target="_blank">
-          <Button onClick={() => {}} text="Midudev repo" color="black" />
+          <Button onClick={() => {}} text="Midudev repo" color="dark" />
         </a>
       </div>
       <div className={styles.contact}>
         <a
-        target='_blank'
+          target="_blank"
           className={styles.contact}
           href="https://www.linkedin.com/in/dayan-arango/"
         >
@@ -30,7 +31,7 @@ export function Home() {
           Dayan Arango
         </a>
         <a
-        target='_blank'
+          target="_blank"
           className={styles.contact}
           href="https://www.linkedin.com/in/jhan-bayer/"
         >

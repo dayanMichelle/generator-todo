@@ -3,7 +3,9 @@ import { Todo } from "../types";
 import todosJson from "../data/todos.json";
 
 export const useTodos = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(
+    JSON.parse(localStorage.getItem("todos") || "[]")
+  );
   const [selectedIdTodo, setSelectedIdTodo] = useState("");
 
   const getTodoById = (id: string) => {
@@ -43,8 +45,8 @@ export const useTodos = () => {
   };
 
   useEffect(() => {
-    setTodos(todosJson);
-  }, []);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return {
     todos,

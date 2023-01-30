@@ -3,10 +3,11 @@ import styles from "./TodoItem.module.css";
 
 type TodoItemProps = {
   todoStep: todoStep;
+  position: number;
   handleChange: (id: string) => void;
 };
 
-export function TodoItem({ todoStep, handleChange }: TodoItemProps) {
+export function TodoItem({ todoStep, position, handleChange }: TodoItemProps) {
   const { id, text, checked } = todoStep;
   return (
     <div
@@ -14,7 +15,8 @@ export function TodoItem({ todoStep, handleChange }: TodoItemProps) {
       onClick={() => handleChange(id)}
     >
       <input type="checkbox" />
-      <p>{text}</p>
+      {/* Format "1. Choose a ..." */}
+      <p>{`${position + 1}. ${text}`}</p>
     </div>
   );
 }

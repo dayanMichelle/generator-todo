@@ -8,8 +8,13 @@ type TodoListProps = {
 export function TodoList({ steps, handleChange }: TodoListProps) {
   return (
     <div className={styles.table}>
-      {steps.map((step) => (
-        <TodoItem key={step.id} todoStep={step} handleChange={handleChange} />
+      {steps.map((step, i) => (
+        <TodoItem
+          key={step.id}
+          todoStep={step}
+          handleChange={handleChange}
+          position={i}
+        />
       ))}
     </div>
   );

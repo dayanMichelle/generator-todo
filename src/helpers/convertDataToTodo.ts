@@ -13,7 +13,7 @@ export const convertDataToTodo = (data: ResponseAPI): Todo => {
   const { id, generations, prompt: title } = data;
 
   // todoStep format
-  const stepText = converTextToChecklist(generations[0].text);
+  const stepText = convertTextToChecklist(generations[0].text);
   const todoStep: todoStep[] = stepText.map((text) => {
     return {
       id: Math.random().toString(36).substring(7),
@@ -33,11 +33,14 @@ export const convertDataToTodo = (data: ResponseAPI): Todo => {
   return todo;
 };
 
-const converTextToChecklist = (text: string): string[] => {
+const convertTextToChecklist = (text: string): string[] => {
+  // format without changes: "1. Step A\n2. Step B\n3. Step C"
+  // format with changes: ["Step A", "Step B", "Step C"]
   return text
-    .trim()
-    .split("\n")
-    .filter((t) => t !== "");
+    .replace(/\n\d+\.? ?/g, "\n") // remove numbers when they are at the beginning of the line
+    .trim() // remove white space
+    .split("\n") // split by new line
+    .filter((t) => t !== ""); // remove empty string
 };
 
 const removePromptToTitle = (text: string): string => {
