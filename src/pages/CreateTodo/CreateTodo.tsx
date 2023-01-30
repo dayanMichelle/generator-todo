@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../../components/Button";
-import { Text } from "../../components/Text/Text";
-import { TodoList } from "../../components/TodoList/TodoList";
-import { Todo } from "../../types";
+
+import { Button, Text, TodoList, Loading } from "../../components";
+import type { Todo } from "../../types";
+import { getTodo } from "../../services";
 
 import todoDefault from "../../data/todoDefault.json";
 import styles from "./CreateTodo.module.css";
-import { getTodos } from "../../services/todos";
-import { Loading } from "../../components/Loading";
 
 type CreateTodoProps = {
   handleAddTodo: (todo: Todo) => void;
@@ -23,7 +21,7 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
 
   const handleSearchTodo = async () => {
     setIsLoading(true);
-    const todos = await getTodos(inputSearch);
+    const todos = await getTodo(inputSearch);
     setIsLoading(false);
     setSearchTodo(todos);
   };
@@ -57,12 +55,20 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
         ) : searchTodo ? (
           <>
             <Text size="16px" weight={700} text={searchTodo.title} />
-            <TodoList steps={searchTodo.steps} handleChange={() => {}} />
+            <TodoList
+              deleteStepAtTodo={() => {}}
+              steps={searchTodo.steps}
+              handleChange={() => {}}
+            />
           </>
         ) : (
           <>
-          <Text size="16px" weight={700} text={todoDefault.title} />
-          <TodoList steps={todoDefault.steps} handleChange={() => {}} />
+            <Text size="16px" weight={700} text={todoDefault.title} />
+            <TodoList
+              deleteStepAtTodo={() => {}}
+              steps={todoDefault.steps}
+              handleChange={() => {}}
+            />
           </>
         )}
       </div>

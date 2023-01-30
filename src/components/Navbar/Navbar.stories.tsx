@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Navbar } from "./Navbar";
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../wrapper/Wrapper";
 
 export default {
   title: "Components/Navbar",
@@ -13,14 +13,12 @@ export default {
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => {
-return (
+  return (
     <Wrapper>
-      <Navbar/>
+      <Navbar />
     </Wrapper>
   );
 };
 
 export const Default = Template.bind({});
-Default.args = {
-
-};
+Default.args = {};

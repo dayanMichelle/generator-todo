@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { TableTodo } from "./TableTodo";
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../wrapper/Wrapper";
 
 export default {
   title: "Components/TableTodo",

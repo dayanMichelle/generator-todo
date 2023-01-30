@@ -1,6 +1,7 @@
-import { Button } from "../../components/Button/Button";
-import { Text } from "../../components/Text/Text";
+import { Button, Text } from "../../components";
+
 import styles from "./Home.module.css";
+
 export function Home() {
   return (
     <div className={styles.container}>

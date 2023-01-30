@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { TodoList } from "./TodoList";
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../wrapper/Wrapper";
 
 export default {
   title: "Components/TodoList",
@@ -34,10 +34,10 @@ Default.args = {
       checked: false,
     },
     {
-        id: "adk-4",
-        text: "Space the plants about 2 feet apart in a sunny spot.",
-        checked: false,
-      },
+      id: "adk-4",
+      text: "Space the plants about 2 feet apart in a sunny spot.",
+      checked: false,
+    },
   ],
   handleChange: (id) => {
     console.log(id);

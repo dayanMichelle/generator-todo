@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Todo } from "../types";
-import todosJson from "../data/todos.json";
+import { createStep } from "../helpers";
+import type { Todo, TodoStep } from "../types";
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<Todo[]>(
@@ -44,6 +44,32 @@ export const useTodos = () => {
     setTodos(newTodos);
   };
 
+  const addStepAtTodo = (step: string, position: number) => {
+    const stepObj: TodoStep = createStep(step);
+    const newTodos = todos.map((todo) => {
+      if (todo.id === selectedIdTodo) {
+        const newSteps = [...todo.steps];
+        newSteps.splice(position, 0, stepObj);
+        return { ...todo, steps: newSteps };
+      } else {
+        return { ...todo };
+      }
+    });
+    setTodos(newTodos);
+  };
+
+  const deleteStepAtTodo = (id: string) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id === selectedIdTodo) {
+        const newSteps = todo.steps.filter((step) => step.id !== id);
+        return { ...todo, steps: newSteps };
+      } else {
+        return { ...todo };
+      }
+    });
+    setTodos(newTodos);
+  };
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -55,5 +81,7 @@ export const useTodos = () => {
     handleSelectedIdTodo,
     handleDeleteTodo,
     handleAddTodo,
+    addStepAtTodo,
+    deleteStepAtTodo,
   };
 };

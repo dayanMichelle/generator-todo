@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { TodoCard } from "./TodoCard";
-import { Wrapper } from "../Wrapper";
+import { Wrapper } from "../wrapper/Wrapper";
 
 export default {
   title: "Components/TodoCard",

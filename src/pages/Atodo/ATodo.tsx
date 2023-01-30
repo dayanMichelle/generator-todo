@@ -1,8 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button } from "../../components/Button";
-import { TodoList } from "../../components/TodoList/TodoList";
-import { Todo } from "../../types";
+import { Button, Modal, TodoList } from "../../components";
+import type { Todo } from "../../types";
 
 import styles from "./ATodo.module.css";
 
@@ -11,6 +10,8 @@ type ATodoProps = {
   handleCheckedTodo: (id: string) => void;
   handleSelectedIdTodo: (id: string) => void;
   handleDeleteTodo: (id: string) => void;
+  addStepAtTodo: (step: string, position: number) => void;
+  deleteStepAtTodo: (id: string) => void;
 };
 
 export const ATodo = ({
@@ -18,7 +19,11 @@ export const ATodo = ({
   handleCheckedTodo,
   handleSelectedIdTodo,
   handleDeleteTodo,
+  addStepAtTodo,
+  deleteStepAtTodo,
 }: ATodoProps) => {
+  const [addMode, setAddMode] = useState(false);
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -30,8 +35,19 @@ export const ATodo = ({
   return (
     <div>
       <h1>{title}</h1>
-      <TodoList steps={steps} handleChange={handleCheckedTodo} />
+      <TodoList
+        steps={steps}
+        handleChange={handleCheckedTodo}
+        deleteStepAtTodo={deleteStepAtTodo}
+      />
       <div className={styles.buttonContainer}>
+        <Button
+          text="Add Step"
+          onClick={() => {
+            setAddMode(true);
+          }}
+        />
+
         <Button
           color="dark"
           text="Delete"
@@ -41,6 +57,13 @@ export const ATodo = ({
           }}
         />
       </div>
+      {addMode && (
+        <Modal
+          closeModal={() => setAddMode(false)}
+          addStepAtTodo={addStepAtTodo}
+          position={steps.length + 1}
+        />
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import { Todo } from "../../types";
 import { TodoCard } from "../TodoCard";
+import { Todo } from "../../types";
 import styles from "./TableTodo.module.css";
 
 type TableTodoProps = {

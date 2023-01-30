@@ -1,8 +1,8 @@
 import axios from "axios";
 import { convertDataToTodo } from "../helpers";
-import { Todo } from "../types";
+import type { Todo } from "../types";
 
-export const getTodos = async (searchTodo: string): Promise<Todo> => {
+export const getTodo = async (searchTodo: string): Promise<Todo> => {
   const options = {
     method: "POST",
     url: "https://api.cohere.ai/generate",

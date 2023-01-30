@@ -1,4 +1,4 @@
-import { Todo, todoStep } from "../types";
+import type { Todo, TodoStep } from "../types";
 
 type ResponseAPI = {
   id: string;
@@ -14,12 +14,8 @@ export const convertDataToTodo = (data: ResponseAPI): Todo => {
 
   // todoStep format
   const stepText = convertTextToChecklist(generations[0].text);
-  const todoStep: todoStep[] = stepText.map((text) => {
-    return {
-      id: Math.random().toString(36).substring(7),
-      text,
-      checked: false,
-    };
+  const todoStep: TodoStep[] = stepText.map((text) => {
+    return createStep(text);
   });
 
   // Todo format
@@ -33,9 +29,17 @@ export const convertDataToTodo = (data: ResponseAPI): Todo => {
   return todo;
 };
 
+export const createStep = (text: string): TodoStep => {
+  return {
+    id: Math.random().toString(36).substring(7),
+    text,
+    checked: false,
+  };
+};
+
 const convertTextToChecklist = (text: string): string[] => {
-  // format without changes: "1. Step A\n2. Step B\n3. Step C"
-  // format with changes: ["Step A", "Step B", "Step C"]
+  // format without changes: "1. Step A-1\n2. Step B-2\n3. Step C-3"
+  // format with changes: ["Step A-1", "Step B-2", "Step C-3"]
   return text
     .replace(/\n\d+\.? ?/g, "\n") // remove numbers when they are at the beginning of the line
     .trim() // remove white space

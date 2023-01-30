@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, MyTodos, ATodo, CreateTodo } from "./pages";
-import { Navbar } from "./components/Navbar";
-import { useTodos } from "./hooks/useTodos";
+import { Navbar } from "./components";
+
+import { useTodos } from "./hooks";
 import "./App.css";
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
     handleSelectedIdTodo,
     handleDeleteTodo,
     handleAddTodo,
+    addStepAtTodo,
+    deleteStepAtTodo,
   } = useTodos();
 
   return (
@@ -29,6 +32,8 @@ function App() {
                 handleCheckedTodo={handleCheckedTodo}
                 handleSelectedIdTodo={handleSelectedIdTodo}
                 handleDeleteTodo={handleDeleteTodo}
+                addStepAtTodo={addStepAtTodo}
+                deleteStepAtTodo={deleteStepAtTodo}
               />
             }
           />
