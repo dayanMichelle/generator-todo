@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, Modal, TodoList } from "@/components";
+import { Button, AddModal, TodoList, DeleteModal } from "@/components";
 import type { Todo } from "@/types";
 
 import styles from "./ATodo.module.css";
@@ -26,6 +26,7 @@ export const ATodo = ({
   handleDragEnd,
 }: ATodoProps) => {
   const [addMode, setAddMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -56,15 +57,23 @@ export const ATodo = ({
           color="dark"
           text="Delete"
           onClick={() => {
-            handleDeleteTodo(id || "");
-            navigate("/my-todos");
+            setDeleteMode(true);
           }}
         />
       </div>
       {addMode && (
-        <Modal
+        <AddModal
           closeModal={() => setAddMode(false)}
           addStepAtTodo={addStepAtTodo}
+        />
+      )}
+      {deleteMode && (
+        <DeleteModal
+          closeModal={() => setDeleteMode(false)}
+          deleteAStep={() => {
+            handleDeleteTodo(id || "");
+            navigate("/my-todos");
+          }}
         />
       )}
     </div>

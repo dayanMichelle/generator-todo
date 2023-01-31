@@ -2,7 +2,7 @@ import styles from "./Text.module.css";
 type TextProps = {
   text: string;
   weight: number;
-  size:string
+  size: string;
 };
 export function Text({ text, weight, size }: TextProps) {
   return (
@@ -10,7 +10,7 @@ export function Text({ text, weight, size }: TextProps) {
       className={styles.container}
       style={{
         fontWeight: weight,
-        fontSize:size
+        fontSize: size,
       }}
     >
       {text}

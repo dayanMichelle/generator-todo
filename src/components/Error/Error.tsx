@@ -1,5 +1,3 @@
 export function Error() {
-    return ( 
-        <p>s</p>
-    )
+  return <p>s</p>;
 }
