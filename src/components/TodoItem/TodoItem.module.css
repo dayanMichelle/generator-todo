@@ -9,6 +9,12 @@
   padding: 0px 10px;
   transition: 0.5s background-color ease;
 }
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .btnDelete {
   background-color: transparent;
   border: none;

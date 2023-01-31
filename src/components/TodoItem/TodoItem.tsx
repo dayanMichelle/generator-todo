@@ -10,6 +10,7 @@ type TodoItemProps = {
   position: number;
   handleChange: (id: string) => void;
   deleteStepAtTodo: (id: string) => void;
+  disabled?: boolean;
 };
 
 export function TodoItem({
@@ -17,6 +18,7 @@ export function TodoItem({
   position,
   handleChange,
   deleteStepAtTodo,
+  disabled = false,
 }: TodoItemProps) {
   const [deleteMode, setDeleteMode] = useState(false);
   const { id, text, checked } = todoStep;
@@ -26,7 +28,9 @@ export function TodoItem({
       <Draggable key={id} draggableId={id} index={position}>
         {(provided) => (
           <div
-            className={`${styles.container} ${checked && styles.checked}`}
+            className={`${styles.container} ${checked && styles.checked} ${
+              disabled && styles.disabled
+            }`}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
             ref={provided.innerRef}
