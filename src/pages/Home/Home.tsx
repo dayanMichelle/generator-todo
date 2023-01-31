@@ -8,7 +8,7 @@ export function Home() {
       <Text
         weight={900}
         size="30px"
-        text="AITodo, a solution for your procrastination 💜"
+        text="AITodo, a solution to save time in planning 🕣"
       />
       <Text
         size="15px"
@@ -18,8 +18,7 @@ export function Home() {
       <Text
         size="15px"
         weight={100}
-        text="IATodo is born from the need to eliminate an extra step when making a task list for our next step.
-        IATodo is born from the need to eliminate an extra step when making a task list for our next step."
+        text="Don't know where to start your new idea, plan or project? IATodo is born from the need to eliminate an extra step when making a to-do list for our next goal. Just write your plan and see the magic ✨"
       />
       <div className={styles.btnContainer}>
         <a href="https://cohere.ai/" target="_blank">
