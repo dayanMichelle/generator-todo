@@ -1,0 +1,21 @@
+.btnGeneric {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 10px;
+  font-weight: 900;
+  background-color: var(--primary-color);
+  transition: 0.4s all ease;
+  text-transform: uppercase;
+  width: 180px;
+}
+
+.btnGeneric:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+}
+
+.dark {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}

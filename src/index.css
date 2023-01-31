@@ -1,10 +1,37 @@
 :root {
-    --primary-color: #EAEAEA;
-    --secondary-color: #2E2D4D;
+  --primary-color: #eaeaea;
+  --secondary-color: #2e2d4d;
+  --hover-color: black;
 }
 
 body {
-    font-family: 'Unbounded', cursive;
-    margin: 0;
-    padding: 0;
+  font-family: "Unbounded", cursive;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:active,
+a:visited {
+  color: inherit;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
 }

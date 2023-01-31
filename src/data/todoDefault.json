@@ -1,0 +1,32 @@
+{
+  "id": "w",
+  "title": "Plant Tomatoes 🍅",
+  "date": "2021-10-10",
+  "steps": [
+    {
+      "id": "1",
+      "text": "Choose a variety of tomato plants that are suited for your region.",
+      "checked": false
+    },
+    {
+      "id": "2",
+      "text": "Start the seeds indoors in a warm, sunny spot.",
+      "checked": false
+    },
+    {
+      "id": "3",
+      "text": "Transplant the seedlings into the garden when they are about 3 inches tall.",
+      "checked": false
+    },
+    {
+      "id": "4",
+      "text": "Space the plants about 2 feet apart in a sunny spot.",
+      "checked": false
+    },
+    {
+      "id": "5",
+      "text": "Water the plants regularly, especially during hot, dry weather.",
+      "checked": false
+    }
+  ]
+}

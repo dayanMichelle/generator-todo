@@ -1,0 +1,12 @@
+.container {
+    width: 400px;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.p {
+    text-align: center;
+}

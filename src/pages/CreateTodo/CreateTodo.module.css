@@ -1,0 +1,25 @@
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.containerTodo {
+  height: 400px;
+}
+.containerTask {
+  margin: 10px 0px;
+}
