@@ -1,4 +1,4 @@
-import { Modal } from "@/components";
+import { Modal, Text } from "@/components";
 
 type DeleteModalProps = {
   closeModal: () => void;
@@ -8,7 +8,7 @@ type DeleteModalProps = {
 export const DeleteModal = ({ closeModal, deleteAStep }: DeleteModalProps) => {
   return (
     <Modal
-      header="Delete!"
+      header="Delete"
       closeModal={closeModal}
       textAction="Eliminar"
       handleAction={() => {
@@ -16,7 +16,7 @@ export const DeleteModal = ({ closeModal, deleteAStep }: DeleteModalProps) => {
         deleteAStep();
       }}
     >
-      <h3>¿Está seguro que desea eliminar?</h3>
+      <Text text=" 🔴 Are your sure to delete this Todo?" />
     </Modal>
   );
 };
