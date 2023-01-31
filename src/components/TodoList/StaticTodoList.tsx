@@ -1,5 +1,5 @@
-import { TodoList, TodoItem } from "@/components";
-import { TodoStep } from "@/types";
+import { TodoList, TodoItem } from "~/components";
+import { TodoStep } from "~/types";
 
 type StaticTodoListProps = {
   steps: TodoStep[];

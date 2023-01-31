@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DropResult } from "react-beautiful-dnd";
-import { Button, AddModal, DeleteModal, DraggableTodoList } from "@/components";
-import type { Todo } from "@/types";
+import { Button, AddModal, DeleteModal, DraggableTodoList } from "~/components";
+import type { Todo } from "~/types";
 
 import styles from "./ATodo.module.css";
 
