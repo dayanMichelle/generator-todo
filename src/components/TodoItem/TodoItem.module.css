@@ -19,7 +19,7 @@
 .container input[type="checkbox"] {
   appearance: none;
   background-color: var(--primary-color);
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   margin-top: 11px;
   border-radius: 3px;
@@ -34,11 +34,13 @@
 .checked {
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  text-decoration: line-through var(--primary-color);
+  -webkit-text-decoration-line: line-through;
+  text-decoration: line-through;
 }
 
 .trash {
   cursor: pointer;
+  color: black;
 }
 
 .checked .trash {

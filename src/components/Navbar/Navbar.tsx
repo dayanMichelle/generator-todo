@@ -16,7 +16,7 @@ export function Navbar() {
                 isActive ? styles.activeClassName : undefined
               }
             >
-              Home
+              HOME
             </NavLink>
           </li>
           <li>
@@ -26,7 +26,7 @@ export function Navbar() {
                 isActive ? styles.activeClassName : undefined
               }
             >
-              My todos
+              TODOS
             </NavLink>
           </li>
           <li>
@@ -36,7 +36,7 @@ export function Navbar() {
                 isActive ? styles.activeClassName : undefined
               }
             >
-              Create todo
+              CREATE
             </NavLink>
           </li>
         </ul>

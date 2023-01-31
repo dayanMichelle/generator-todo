@@ -20,14 +20,11 @@ export const Modal = ({ closeModal, addStepAtTodo }: ModalProps) => {
           </div>
 
           <div className={styles.modalContent}>
-            <label>
-              <p className={styles.label}>Text</p>
-              <Input
-                handleChange={(e) => setStepTodo(e.target.value)}
-                inputValue={stepTodo}
-                placeholder="Add a personal step"
-              />
-            </label>
+            <Input
+              handleChange={(e) => setStepTodo(e.target.value)}
+              inputValue={stepTodo}
+              placeholder="Add a personal step"
+            />
           </div>
           <div className={styles.modalActions}>
             <div className={styles.actionsContainer}>
@@ -38,7 +35,6 @@ export const Modal = ({ closeModal, addStepAtTodo }: ModalProps) => {
                 }}
                 text="save"
               />
-              <Button color="dark" onClick={closeModal} text="cancel" />
             </div>
           </div>
         </div>
