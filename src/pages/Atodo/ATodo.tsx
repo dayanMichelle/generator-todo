@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, Modal, TodoList } from "@/components";
+import { DropResult } from "react-beautiful-dnd";
+import { Button, AddModal, DeleteModal, DraggableTodoList } from "@/components";
 import type { Todo } from "@/types";
 
 import styles from "./ATodo.module.css";
-import { DropResult } from "react-beautiful-dnd";
 
 type ATodoProps = {
   getTodoById: (id: string) => Todo | undefined;
@@ -26,6 +26,7 @@ export const ATodo = ({
   handleDragEnd,
 }: ATodoProps) => {
   const [addMode, setAddMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,11 +35,11 @@ export const ATodo = ({
     if (id) handleSelectedIdTodo(id);
   }, [id]);
 
-  const { title, steps } = getTodoById(id || "") || { title: "", steps: [] };
+  const { title, steps } = getTodoById(id!) || { title: "", steps: [] };
   return (
     <div>
       <h1>{title}</h1>
-      <TodoList
+      <DraggableTodoList
         steps={steps}
         handleChange={handleCheckedTodo}
         deleteStepAtTodo={deleteStepAtTodo}
@@ -56,15 +57,23 @@ export const ATodo = ({
           color="dark"
           text="Delete"
           onClick={() => {
-            handleDeleteTodo(id || "");
-            navigate("/my-todos");
+            setDeleteMode(true);
           }}
         />
       </div>
       {addMode && (
-        <Modal
+        <AddModal
           closeModal={() => setAddMode(false)}
           addStepAtTodo={addStepAtTodo}
+        />
+      )}
+      {deleteMode && (
+        <DeleteModal
+          closeModal={() => setDeleteMode(false)}
+          deleteAStep={() => {
+            handleDeleteTodo(id || "");
+            navigate("/my-todos");
+          }}
         />
       )}
     </div>

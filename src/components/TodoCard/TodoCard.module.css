@@ -3,12 +3,13 @@
   padding: 20px;
   border-radius: 40px;
   width: 200px;
-  min-height: 180px;
+  aspect-ratio: 1/1;
   text-align: left;
   cursor: pointer;
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transition: 0.5s background-color ease;
+  position: relative;
 }
 
 .container:hover {
@@ -19,7 +20,13 @@
 .title {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .date {
   font-size: 10px;
   margin: 0 auto;
@@ -29,6 +36,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
   font-size: 10px;
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 40px);
 }

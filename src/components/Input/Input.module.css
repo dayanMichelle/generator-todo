@@ -1,5 +1,9 @@
+.containerInput {
+  position: relative;
+}
+
 .input {
-  width: 200px;
+  width: 180px;
   height: 30px;
   border-top: none;
   border-left: none;

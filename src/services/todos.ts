@@ -10,7 +10,7 @@ export const getTodo = async (searchTodo: string): Promise<Todo> => {
       accept: "application/json",
       "Cohere-Version": "2022-12-06",
       "content-type": "application/json",
-      authorization: "Bearer YlGS7ODJBn0zYhljosBvnIPBw0NKnms7UlOGCyNc",
+      authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
     },
     data: {
       model: "command-xlarge-20221108",
@@ -28,7 +28,6 @@ export const getTodo = async (searchTodo: string): Promise<Todo> => {
 
   const response = await axios.request(options);
   const { data } = response;
-  console.log(data);
   const todo = convertDataToTodo(data);
   return todo;
 };

@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Text, TodoList, Loading, InputSearch } from "@/components";
+import {
+  Button,
+  Text,
+  Loading,
+  InputSearch,
+  StaticTodoList,
+  Error,
+} from "@/components";
 import type { Todo } from "@/types";
 import { getTodo } from "@/services";
 
@@ -15,15 +22,23 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
   const [searchTodo, setSearchTodo] = useState<Todo>();
   const [inputSearch, setInputSearch] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const navigate = useNavigate();
 
-  const handleSearchTodo = async () => {
+  const handleSearchTodo = async (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
+    if (!inputSearch) return;
     setSearchTodo(undefined);
+    setIsError(false);
     setIsLoading(true);
-    const todos = await getTodo(inputSearch);
+    try {
+      const todos = await getTodo(inputSearch);
+      setSearchTodo(todos);
+    } catch (error) {
+      setIsError(true);
+    }
     setIsLoading(false);
-    setSearchTodo(todos);
   };
 
   const handleButton = () => {
@@ -36,24 +51,29 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
     <div className={styles.container}>
       <div className={styles.search}>
         <Text size="20px" weight={700} text="Search a TODO" />
-        <InputSearch
-          handleChange={(e) => setInputSearch(e.target.value)}
-          inputValue={inputSearch}
-          handleSearchTodo={handleSearchTodo}
-        />
+        <form onSubmit={handleSearchTodo}>
+          <InputSearch
+            handleChange={(e) => setInputSearch(e.target.value)}
+            inputValue={inputSearch}
+            handleSearchTodo={handleSearchTodo}
+          />
+        </form>
       </div>
       <div className={styles.containerTask}>
-        {isLoading ? (
+        {isError ? (
+          <Error text="Error try later" />
+        ) : isLoading ? (
           <Loading />
-        ) : searchTodo ? (
-          <>
-            <Text size="16px" weight={700} text={searchTodo.title} />
-            <TodoList steps={searchTodo.steps} />
-          </>
         ) : (
           <>
-            <Text size="16px" weight={700} text={todoDefault.title} />
-            <TodoList steps={todoDefault.steps} />
+            <Text
+              size="16px"
+              weight={700}
+              text={searchTodo ? searchTodo.title : todoDefault.title}
+            />
+            <StaticTodoList
+              steps={searchTodo ? searchTodo.steps : todoDefault.steps}
+            />
           </>
         )}
       </div>

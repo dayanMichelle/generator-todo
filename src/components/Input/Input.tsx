@@ -14,7 +14,7 @@ export const Input = ({
   placeholder,
 }: InputProps) => {
   return (
-    <div>
+    <div className={styles.containerInput}>
       <input
         // placeholder="e.j: Plant a tomatoes "
         placeholder={placeholder}

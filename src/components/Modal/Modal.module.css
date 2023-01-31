@@ -18,14 +18,20 @@
 }
 
 .modal {
-  width: 450px;
+  width: 320px;
   min-height: 200px;
-  padding: 10px;
+  padding: 40px 20px;
   background: white;
   color: white;
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 400px;
+  }
 }
 
 .modalHeader {
@@ -40,13 +46,14 @@
   margin: 0;
   padding: 10px;
   color: #2c3e50;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
 }
 
 .modalContent {
   padding: 10px;
+  margin: 20px auto;
   font-size: 14px;
   color: #2c3e50;
   text-align: center;
@@ -61,4 +68,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }
