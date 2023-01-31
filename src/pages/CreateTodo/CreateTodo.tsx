@@ -7,11 +7,11 @@ import {
   InputSearch,
   StaticTodoList,
   Error,
-} from "~/components";
-import type { Todo } from "~/types";
-import { getTodo } from "~/services";
+} from "src/components";
+import type { Todo } from "src/types";
+import { getTodo } from "src/services";
 
-import todoDefault from "~/data/todoDefault.json";
+import todoDefault from "src/data/todoDefault.json";
 import styles from "./CreateTodo.module.css";
 
 type CreateTodoProps = {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BsTrash } from "react-icons/bs";
-import { DeleteModal } from "~/components";
-import { TodoStep } from "~/types";
+import { DeleteModal } from "src/components";
+import { TodoStep } from "src/types";
 import styles from "./TodoItem.module.css";
 
 type TodoItemProps = {

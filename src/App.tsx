@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, MyTodos, ATodo, CreateTodo, NotFound } from "~/pages";
-import { Navbar } from "~/components";
-import { useTodos } from "~/hooks";
+import { Home, MyTodos, ATodo, CreateTodo, NotFound } from "src/pages";
+import { Navbar } from "src/components";
+import { useTodos } from "src/hooks";
 
 function App() {
   const {
