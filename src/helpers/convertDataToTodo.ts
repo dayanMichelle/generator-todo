@@ -1,4 +1,4 @@
-import type { Todo, TodoStep } from "src/types";
+import type { Todo, TodoStep } from "../types";
 
 type ResponseAPI = {
   id: string;

@@ -1,4 +1,4 @@
-import { Modal, Text } from "src/components";
+import { Modal, Text } from "../../components";
 
 type DeleteModalProps = {
   closeModal: () => void;

@@ -1,6 +1,6 @@
 import { DropResult } from "react-beautiful-dnd";
-import { TodoItem, DragContainer, DragItem, TodoList } from "src/components";
-import { TodoStep } from "src/types";
+import { TodoItem, DragContainer, DragItem, TodoList } from "../../components";
+import { TodoStep } from "../../types";
 
 type DraggableTodoListProps = {
   steps: TodoStep[];

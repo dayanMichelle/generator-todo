@@ -6,8 +6,8 @@ import {
   AddModal,
   DeleteModal,
   DraggableTodoList,
-} from "src/components";
-import type { Todo } from "src/types";
+} from "../../components";
+import type { Todo } from "../../types";
 
 import styles from "./ATodo.module.css";
 

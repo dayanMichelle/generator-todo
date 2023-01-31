@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Button, Input } from "src/components";
+import { Button, Input } from "../../components";
 import styles from "./Modal.module.css";
 
 type ModalProps = {

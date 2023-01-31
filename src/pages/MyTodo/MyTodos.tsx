@@ -1,6 +1,6 @@
-import { TableTodo } from "src/components";
+import { TableTodo } from "../../components";
 
-import type { Todo } from "src/types";
+import type { Todo } from "../../types";
 import styles from "./MyTodo.module.css";
 
 type MyTodosProps = {
