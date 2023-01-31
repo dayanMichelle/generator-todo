@@ -1,6 +1,6 @@
 import axios from "axios";
-import { convertDataToTodo } from "@/helpers";
-import type { Todo } from "@/types";
+import { convertDataToTodo } from "../helpers";
+import type { Todo } from "../types";
 
 export const getTodo = async (searchTodo: string): Promise<Todo> => {
   const options = {

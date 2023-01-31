@@ -1,4 +1,4 @@
-import { Input, Modal } from "@/components";
+import { Input, Modal } from "../../components";
 import { useState } from "react";
 
 type AddModalProps = {

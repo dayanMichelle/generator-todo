@@ -1,4 +1,4 @@
-import { Button, Text } from "@/components";
+import { Button, Text } from "../../components";
 
 import styles from "./Home.module.css";
 
@@ -24,7 +24,10 @@ export function Home() {
         <a href="https://cohere.ai/" target="_blank">
           <Button onClick={() => {}} text="Doc Cohere" />
         </a>
-        <a target="_blank" href="https://github.com/midudev/midu-cohere-hackathon">
+        <a
+          target="_blank"
+          href="https://github.com/midudev/midu-cohere-hackathon"
+        >
           <Button onClick={() => {}} text="Midudev repo" color="dark" />
         </a>
       </div>

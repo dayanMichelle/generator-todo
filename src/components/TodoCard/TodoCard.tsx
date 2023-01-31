@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProgressBar } from "@/components";
+import { ProgressBar } from "../../components";
 import styles from "./TodoCard.module.css";
 
 type CardTodoProps = {
