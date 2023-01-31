@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, MyTodos, ATodo, CreateTodo } from "@/pages";
+import { Home, MyTodos, ATodo, CreateTodo, NotFound } from "@/pages";
 import { Navbar } from "@/components";
-import { Error } from "./pages/Error";
 import { useTodos } from "@/hooks";
 
 function App() {
@@ -22,8 +21,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/">
-       
-          <Route index element={<Error />} />
+          <Route index element={<Home />} />
           <Route path="my-todos" element={<MyTodos todos={todos} />} />
           <Route
             path="my-todos/:id"
@@ -43,7 +41,7 @@ function App() {
             path="create-todo"
             element={<CreateTodo handleAddTodo={handleAddTodo} />}
           />
-          <Route path="*" element={<div>Error</div>} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>

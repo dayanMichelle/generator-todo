@@ -1,20 +1,20 @@
 .container {
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
-    font-weight: 100;
-    font-size: 13px;
-    padding: 0px 10px;
-    transition: 0.5s background-color ease;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  font-weight: 100;
+  font-size: 13px;
+  padding: 0px 10px;
+  transition: 0.5s background-color ease;
 }
 .btnDelete {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 .container:hover .trash {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 .container input[type="checkbox"] {
   appearance: none;
@@ -32,16 +32,20 @@
   background-color: var(--hover-color);
 }
 .checked {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    text-decoration: line-through var(--primary-color)
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-decoration: line-through var(--primary-color);
 }
+
+.trash {
+  cursor: pointer;
+}
+
 .checked .trash {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .containerTask {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
-

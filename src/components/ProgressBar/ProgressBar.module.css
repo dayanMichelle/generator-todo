@@ -1,0 +1,19 @@
+/*
+ * SVG Progress Indicator
+ *
+ * Set-up the indicator using SVG attributes that are 
+ * supported as properties in CSS.
+ *
+ * @since 07/07/22
+ * @link  https://codepen.io/_rahul/pen/BarobwE
+ */
+
+.svgPiWrapper {
+  position: relative;
+  border: none;
+}
+
+.svgPi {
+  transform: rotate(-90deg); /* Fix the orientation */
+  border: none;
+}

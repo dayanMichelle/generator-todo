@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiSearch } from 'react-icons/fi';
-import { Button, Text, TodoList, Loading } from "@/components";
+import { Button, Text, TodoList, Loading, InputSearch } from "@/components";
 import type { Todo } from "@/types";
 import { getTodo } from "@/services";
 
@@ -37,18 +36,11 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
     <div className={styles.container}>
       <div className={styles.search}>
         <Text size="20px" weight={700} text="Search a TODO" />
-        <div>
-          <input
-            placeholder="e.j: Plant a tomatoes "
-            type="text"
-            className={styles.inputSearch}
-            value={inputSearch}
-            onChange={(e) => setInputSearch(e.target.value)}
-          />
-          <button onClick={handleSearchTodo} className={styles.btnSearch}>
-          <FiSearch />
-          </button>
-        </div>
+        <InputSearch
+          handleChange={(e) => setInputSearch(e.target.value)}
+          inputValue={inputSearch}
+          handleSearchTodo={handleSearchTodo}
+        />
       </div>
       <div className={styles.containerTask}>
         {isLoading ? (

@@ -1,0 +1,14 @@
+.input {
+  width: 200px;
+  height: 30px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: var(--primary-color);
+}
+.input:focus {
+  border: 1px solid var(--primary-color);
+  outline: none;
+  border-bottom: 1px solid var(--hover-color);
+}

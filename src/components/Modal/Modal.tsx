@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components";
+import { Button, Input } from "@/components";
 import styles from "./Modal.module.css";
 
 type ModalProps = {
@@ -18,18 +18,14 @@ export const Modal = ({ closeModal, addStepAtTodo }: ModalProps) => {
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>Create a step</h5>
           </div>
-          <button className={styles.closeBtn} onClick={closeModal}>
-            {/* <RiCloseLine style={{ marginBottom: "-3px" }} /> */}x
-          </button>
+
           <div className={styles.modalContent}>
             <label>
               <p className={styles.label}>Text</p>
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Enter a step"
-                value={stepTodo}
-                onChange={(e) => setStepTodo(e.target.value)}
+              <Input
+                handleChange={(e) => setStepTodo(e.target.value)}
+                inputValue={stepTodo}
+                placeholder="Add a personal step"
               />
             </label>
           </div>

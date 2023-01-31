@@ -1,0 +1,10 @@
+.btnSearch {
+  border: none;
+  transition: 0.3s all ease;
+  background-color: transparent;
+  position: relative;
+  left: -30px;
+}
+.btnSearch:hover {
+  cursor: pointer;
+}

@@ -8,3 +8,6 @@ export * from "./TodoCard";
 export * from "./TodoItem";
 export * from "./TodoList";
 export * from "./wrapper";
+export * from "./Error";
+export * from "./ProgressBar";
+export * from "./Input";

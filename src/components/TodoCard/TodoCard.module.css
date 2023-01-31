@@ -1,12 +1,14 @@
 .container {
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 40px;
-    width: 180px;
-    text-align: left;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 40px;
+  width: 200px;
+  min-height: 180px;
+  text-align: left;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: 0.5s background-color ease;
 }
 
 .container:hover {
@@ -29,13 +31,4 @@
   align-items: center;
   margin-top: 20px;
   font-size: 10px;
-}
-
-.counter {
-  font-size: 30px;
-}
-
-.completed {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
 }
