@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, MyTodos, ATodo, CreateTodo, NotFound } from "./pages";
+import { Home, MyTodos, MyTodo, CreateTodo, NotFound } from "./pages";
 import { Navbar } from "./components";
 import { useTodos } from "./hooks";
 
@@ -26,7 +26,7 @@ function App() {
           <Route
             path="my-todos/:id"
             element={
-              <ATodo
+              <MyTodo
                 getTodoById={getTodoById}
                 handleCheckedTodo={handleCheckedTodo}
                 handleSelectedIdTodo={handleSelectedIdTodo}

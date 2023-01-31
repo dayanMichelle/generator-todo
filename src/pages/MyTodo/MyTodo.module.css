@@ -1,3 +1,6 @@
-.container {
-  margin-top: 50px;
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+  gap: 20px;
 }

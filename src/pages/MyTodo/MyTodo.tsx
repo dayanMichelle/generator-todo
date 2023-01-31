@@ -9,9 +9,9 @@ import {
 } from "../../components";
 import type { Todo } from "../../types";
 
-import styles from "./ATodo.module.css";
+import styles from "./MyTodo.module.css";
 
-type ATodoProps = {
+type MyTodoProps = {
   getTodoById: (id: string) => Todo | undefined;
   handleCheckedTodo: (id: string) => void;
   handleSelectedIdTodo: (id: string) => void;
@@ -21,7 +21,7 @@ type ATodoProps = {
   handleDragEnd: (result: DropResult) => void;
 };
 
-export const ATodo = ({
+export const MyTodo = ({
   getTodoById,
   handleCheckedTodo,
   handleSelectedIdTodo,
@@ -29,7 +29,7 @@ export const ATodo = ({
   addStepAtTodo,
   deleteStepAtTodo,
   handleDragEnd,
-}: ATodoProps) => {
+}: MyTodoProps) => {
   const [addMode, setAddMode] = useState(false);
   const [deleteMode, setDeleteMode] = useState(false);
 
