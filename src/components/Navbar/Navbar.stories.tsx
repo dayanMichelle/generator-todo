@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Navbar, Wrapper } from "@/components";
+import { Navbar, Wrapper } from "../../components";
 
 export default {
   title: "Components/Navbar",

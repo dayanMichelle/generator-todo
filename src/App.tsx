@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, MyTodos, ATodo, CreateTodo } from "@/pages";
 import { Navbar } from "@/components";
-
+import { Error } from "./pages/Error";
 import { useTodos } from "@/hooks";
 
 function App() {
@@ -22,7 +22,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
+       
+          <Route index element={<Error />} />
           <Route path="my-todos" element={<MyTodos todos={todos} />} />
           <Route
             path="my-todos/:id"

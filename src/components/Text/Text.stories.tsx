@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Text, Wrapper } from "@/components";
+import { Text, Wrapper } from "../../components";
 
 export default {
   title: "Components/Text",

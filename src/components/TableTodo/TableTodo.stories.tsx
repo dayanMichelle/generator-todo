@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TableTodo, Wrapper } from "@/components";
+import { TableTodo, Wrapper } from "../../components";
 
 export default {
   title: "Components/TableTodo",
