@@ -16,7 +16,7 @@ export const DeleteModal = ({ closeModal, deleteAStep }: DeleteModalProps) => {
         deleteAStep();
       }}
     >
-      <Text text=" 🔴 Are your sure to delete this Todo?" />
+      <Text align="center" text=" 🔴 Are your sure to delete this Todo?" />
     </Modal>
   );
 };
