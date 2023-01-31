@@ -19,24 +19,5 @@ const Template: ComponentStory<typeof TodoList> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  steps: [
-    {
-      id: "adk-2",
-      text: "Choose a variety of tomato plants that are suited for your region.",
-      checked: true,
-    },
-    {
-      id: "adk-3",
-      text: "Start the seeds indoors in a warm, sunny spot.",
-      checked: false,
-    },
-    {
-      id: "adk-4",
-      text: "Space the plants about 2 feet apart in a sunny spot.",
-      checked: false,
-    },
-  ],
-  handleChange: (id) => {
-    console.log(id);
-  },
+  children: <p>Prueba</p>,
 };
