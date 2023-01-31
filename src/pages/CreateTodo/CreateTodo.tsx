@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Text, TodoList, Loading, InputSearch } from "@/components";
+import {
+  Button,
+  Text,
+  Loading,
+  InputSearch,
+  StaticTodoList,
+} from "@/components";
 import type { Todo } from "@/types";
 import { getTodo } from "@/services";
 
@@ -48,12 +54,12 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
         ) : searchTodo ? (
           <>
             <Text size="16px" weight={700} text={searchTodo.title} />
-            <TodoList disabled steps={searchTodo.steps} />
+            <StaticTodoList steps={searchTodo.steps} />
           </>
         ) : (
           <>
             <Text size="16px" weight={700} text={todoDefault.title} />
-            <TodoList disabled steps={todoDefault.steps} />
+            <StaticTodoList steps={todoDefault.steps} />
           </>
         )}
       </div>

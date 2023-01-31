@@ -1,9 +1,8 @@
-import { TodoStep } from "@/types";
-import { Draggable } from "react-beautiful-dnd";
-import styles from "./TodoItem.module.css";
-import { BsTrash } from "react-icons/bs";
 import { useState } from "react";
+import { BsTrash } from "react-icons/bs";
 import { DeleteModal } from "@/components";
+import { TodoStep } from "@/types";
+import styles from "./TodoItem.module.css";
 
 type TodoItemProps = {
   todoStep: TodoStep;
@@ -25,34 +24,23 @@ export function TodoItem({
 
   return (
     <>
-      <Draggable key={id} draggableId={id} index={position}>
-        {(provided) => (
-          <div
-            className={`${styles.container} ${checked && styles.checked} ${
-              disabled && styles.disabled
-            }`}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            ref={provided.innerRef}
-            style={provided.draggableProps.style}
-          >
-            <div
-              className={styles.containerTask}
-              onClick={() => handleChange(id)}
-            >
-              <input type="checkbox" />
-              {/* Format "1. Choose a ..." */}
-              <p>{`${position + 1}. ${text}`}</p>
-            </div>
-            <button
-              className={styles.btnDelete}
-              onClick={() => setDeleteMode(true)}
-            >
-              <BsTrash className={styles.trash} size="20px" />
-            </button>
-          </div>
-        )}
-      </Draggable>
+      <div
+        className={`${styles.container} ${checked && styles.checked} ${
+          disabled && styles.disabled
+        }`}
+      >
+        <div className={styles.containerTask} onClick={() => handleChange(id)}>
+          <input type="checkbox" />
+          {/* Format "1. Choose a ..." */}
+          <p>{`${position + 1}. ${text}`}</p>
+        </div>
+        <button
+          className={styles.btnDelete}
+          onClick={() => setDeleteMode(true)}
+        >
+          <BsTrash className={styles.trash} size="20px" />
+        </button>
+      </div>
       {deleteMode && (
         <DeleteModal
           closeModal={() => setDeleteMode(false)}

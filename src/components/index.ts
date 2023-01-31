@@ -11,3 +11,4 @@ export * from "./wrapper";
 export * from "./Error";
 export * from "./ProgressBar";
 export * from "./Input";
+export * from "./Drag";

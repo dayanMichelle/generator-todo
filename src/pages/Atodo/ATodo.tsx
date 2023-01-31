@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, AddModal, TodoList, DeleteModal } from "@/components";
+import { DropResult } from "react-beautiful-dnd";
+import { Button, AddModal, DeleteModal, DraggableTodoList } from "@/components";
 import type { Todo } from "@/types";
 
 import styles from "./ATodo.module.css";
-import { DropResult } from "react-beautiful-dnd";
 
 type ATodoProps = {
   getTodoById: (id: string) => Todo | undefined;
@@ -35,11 +35,11 @@ export const ATodo = ({
     if (id) handleSelectedIdTodo(id);
   }, [id]);
 
-  const { title, steps } = getTodoById(id || "") || { title: "", steps: [] };
+  const { title, steps } = getTodoById(id!) || { title: "", steps: [] };
   return (
     <div>
       <h1>{title}</h1>
-      <TodoList
+      <DraggableTodoList
         steps={steps}
         handleChange={handleCheckedTodo}
         deleteStepAtTodo={deleteStepAtTodo}
