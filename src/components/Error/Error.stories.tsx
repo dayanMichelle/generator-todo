@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Error>;
 
 const Template: ComponentStory<typeof Error> = (args) => {
-  return <Error />;
+  return <Error text="Prueba" />;
 };
 
 export const Default = Template.bind({});
