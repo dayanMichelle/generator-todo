@@ -4,14 +4,16 @@ import { Button, Modal, TodoList } from "@/components";
 import type { Todo } from "@/types";
 
 import styles from "./ATodo.module.css";
+import { DropResult } from "react-beautiful-dnd";
 
 type ATodoProps = {
   getTodoById: (id: string) => Todo | undefined;
   handleCheckedTodo: (id: string) => void;
   handleSelectedIdTodo: (id: string) => void;
   handleDeleteTodo: (id: string) => void;
-  addStepAtTodo: (step: string, position: number) => void;
+  addStepAtTodo: (step: string) => void;
   deleteStepAtTodo: (id: string) => void;
+  handleDragEnd: (result: DropResult) => void;
 };
 
 export const ATodo = ({
@@ -21,6 +23,7 @@ export const ATodo = ({
   handleDeleteTodo,
   addStepAtTodo,
   deleteStepAtTodo,
+  handleDragEnd,
 }: ATodoProps) => {
   const [addMode, setAddMode] = useState(false);
 
@@ -39,6 +42,7 @@ export const ATodo = ({
         steps={steps}
         handleChange={handleCheckedTodo}
         deleteStepAtTodo={deleteStepAtTodo}
+        handleDragEnd={handleDragEnd}
       />
       <div className={styles.buttonContainer}>
         <Button
@@ -61,7 +65,6 @@ export const ATodo = ({
         <Modal
           closeModal={() => setAddMode(false)}
           addStepAtTodo={addStepAtTodo}
-          position={steps.length + 1}
         />
       )}
     </div>

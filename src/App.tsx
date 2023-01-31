@@ -14,6 +14,7 @@ function App() {
     handleAddTodo,
     addStepAtTodo,
     deleteStepAtTodo,
+    handleDragEnd,
   } = useTodos();
 
   return (
@@ -33,6 +34,7 @@ function App() {
                 handleDeleteTodo={handleDeleteTodo}
                 addStepAtTodo={addStepAtTodo}
                 deleteStepAtTodo={deleteStepAtTodo}
+                handleDragEnd={handleDragEnd}
               />
             }
           />
@@ -40,7 +42,7 @@ function App() {
             path="create-todo"
             element={<CreateTodo handleAddTodo={handleAddTodo} />}
           />
-          <Route path="*" element={<h3>Error</h3>} />
+          <Route path="*" element={<div>Error</div>} />
         </Route>
       </Routes>
     </div>

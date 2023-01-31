@@ -56,20 +56,12 @@ export const CreateTodo = ({ handleAddTodo }: CreateTodoProps) => {
         ) : searchTodo ? (
           <>
             <Text size="16px" weight={700} text={searchTodo.title} />
-            <TodoList
-              deleteStepAtTodo={() => {}}
-              steps={searchTodo.steps}
-              handleChange={() => {}}
-            />
+            <TodoList steps={searchTodo.steps} />
           </>
         ) : (
           <>
             <Text size="16px" weight={700} text={todoDefault.title} />
-            <TodoList
-              deleteStepAtTodo={() => {}}
-              steps={todoDefault.steps}
-              handleChange={() => {}}
-            />
+            <TodoList steps={todoDefault.steps} />
           </>
         )}
       </div>

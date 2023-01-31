@@ -4,13 +4,11 @@ import styles from "./Modal.module.css";
 
 type ModalProps = {
   closeModal: () => void;
-  addStepAtTodo: (step: string, position: number) => void;
-  position: number;
+  addStepAtTodo: (step: string) => void;
 };
 
-export const Modal = ({ closeModal, addStepAtTodo, position }: ModalProps) => {
+export const Modal = ({ closeModal, addStepAtTodo }: ModalProps) => {
   const [stepTodo, setStepTodo] = useState("");
-  const [positionTodo, setPositionTodo] = useState(0);
 
   return (
     <>
@@ -25,7 +23,7 @@ export const Modal = ({ closeModal, addStepAtTodo, position }: ModalProps) => {
           </button>
           <div className={styles.modalContent}>
             <label>
-              <p className={styles.label}>Step</p>
+              <p className={styles.label}>Text</p>
               <input
                 className={styles.input}
                 type="text"
@@ -34,27 +32,13 @@ export const Modal = ({ closeModal, addStepAtTodo, position }: ModalProps) => {
                 onChange={(e) => setStepTodo(e.target.value)}
               />
             </label>
-            <label>
-              <p>Give a step</p>
-              <select
-                className={styles.select}
-                value={positionTodo}
-                onChange={(e) => setPositionTodo(Number(e.target.value))}
-              >
-                {Array.from({ length: position }, (_, i) => (
-                  <option key={i} value={i}>
-                    {i + 1}
-                  </option>
-                ))}
-              </select>
-            </label>
           </div>
           <div className={styles.modalActions}>
             <div className={styles.actionsContainer}>
               <Button
                 onClick={() => {
                   closeModal();
-                  addStepAtTodo(stepTodo, positionTodo);
+                  addStepAtTodo(stepTodo);
                 }}
                 text="save"
               />

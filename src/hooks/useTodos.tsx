@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createStep } from "@/helpers";
 import type { Todo, TodoStep } from "@/types";
+import { DropResult } from "react-beautiful-dnd";
 
 export const useTodos = () => {
   const [todos, setTodos] = useState<Todo[]>(
@@ -44,12 +45,11 @@ export const useTodos = () => {
     setTodos(newTodos);
   };
 
-  const addStepAtTodo = (step: string, position: number) => {
+  const addStepAtTodo = (step: string) => {
     const stepObj: TodoStep = createStep(step);
     const newTodos = todos.map((todo) => {
       if (todo.id === selectedIdTodo) {
-        const newSteps = [...todo.steps];
-        newSteps.splice(position, 0, stepObj);
+        const newSteps = [...todo.steps, stepObj];
         return { ...todo, steps: newSteps };
       } else {
         return { ...todo };
@@ -62,6 +62,22 @@ export const useTodos = () => {
     const newTodos = todos.map((todo) => {
       if (todo.id === selectedIdTodo) {
         const newSteps = todo.steps.filter((step) => step.id !== id);
+        return { ...todo, steps: newSteps };
+      } else {
+        return { ...todo };
+      }
+    });
+    setTodos(newTodos);
+  };
+
+  const handleDragEnd = (result: DropResult) => {
+    if (!result.destination) return;
+
+    const newTodos = todos.map((todo) => {
+      if (todo.id === selectedIdTodo) {
+        const newSteps = [...todo.steps];
+        const [removed] = newSteps.splice(result.source.index, 1);
+        newSteps.splice(result.destination!.index, 0, removed);
         return { ...todo, steps: newSteps };
       } else {
         return { ...todo };
@@ -83,5 +99,6 @@ export const useTodos = () => {
     handleAddTodo,
     addStepAtTodo,
     deleteStepAtTodo,
+    handleDragEnd,
   };
 };
