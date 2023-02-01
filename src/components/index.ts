@@ -12,3 +12,4 @@ export * from "./Error";
 export * from "./ProgressBar";
 export * from "./Input";
 export * from "./Drag";
+export * from "./Video";

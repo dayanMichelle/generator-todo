@@ -10,13 +10,13 @@ export const DeleteModal = ({ closeModal, deleteAStep }: DeleteModalProps) => {
     <Modal
       header="Delete"
       closeModal={closeModal}
-      textAction="Eliminar"
+      textAction="Delete"
       handleAction={() => {
         closeModal();
         deleteAStep();
       }}
     >
-      <Text align="center" text=" 🔴 Are your sure to delete this Todo?" />
+      <Text align="center" text=" 🔴 Are you sure to delete this Todo?" />
     </Modal>
   );
 };

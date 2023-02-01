@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #eaeaea;
+  --primary-color: rgb(234, 234, 234);
   --secondary-color: #2e2d4d;
   --hover-color: black;
 }
@@ -15,6 +15,7 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   padding: 1rem;
+  overflow-x: hidden;
 }
 
 * {
