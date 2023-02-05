@@ -5,7 +5,7 @@ export function Navbar() {
   return (
     <div className={styles.navbar}>
       <div>
-        <img width="30px" src="/icon.png" alt="" />
+        <img width="50px" src="/icon.png" alt="" />
       </div>
       <div className={styles.url}>
         <ul>
